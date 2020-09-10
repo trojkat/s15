@@ -1,0 +1,53 @@
+{% extends 'panel/dashboard.html' %}
+{% load static i18n %}
+
+{% block title %}{% trans 'Theme' %} {{ theme.name }}{% endblock title %}
+
+{% block content %}
+
+  <div class="card shadow">
+    <div class="card-header py-3">
+      <h6 class="m-0 font-weight-bold text-primary">{{ theme.name }}</h6>
+    </div>
+    <div class="card-body">
+
+      {% trans 'Author' %}: {% if theme.author_website %}
+        <a href="{{ theme.author_website }}">{{ theme.author }}</a>
+        {% else %}
+        {{ theme.author }}
+        {% endif %}
+      <br>
+
+      <div class="card-group text-center">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">{% trans 'Web browser' %}</h5>
+            <img src="{{ theme.cover }}" alt="{{ theme.name }} - przeglądarka" class="border" style="max-height: 300px;">
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">{% trans 'Tablet' %}</h5>
+            <img src="{{ theme.tablet }}" alt="{{ theme.name }} - tablet" class="border" style="max-height: 300px;">
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">{% trans 'Mobile' %}</h5>
+            <img src="{{ theme.mobile }}" alt="{{ theme.name }} - telefon" class="border" style="max-height: 300px;">
+          </div>
+        </div>
+      </div>
+
+      <p>
+        <form action="" method="post">
+          {% csrf_token %}
+          <input type="submit" class="btn btn-primary btn-user" value="{% trans 'Use this theme' %}">
+          <a href="{% url 'themes' %}" class="btn btn-secondary">{% trans 'Back' %}</a>
+        </form>
+      </p>
+
+    </div>
+  </div>
+
+{% endblock content %}

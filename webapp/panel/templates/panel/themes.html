@@ -1,0 +1,32 @@
+{% extends 'panel/dashboard.html' %}
+{% load static i18n %}
+
+{% block title %}{% trans 'List of themes' %}{% endblock title %}
+
+{% block content %}
+
+  <div class="card shadow">
+    <div class="card-header py-3">
+      <h6 class="m-0 font-weight-bold text-primary">{% trans 'List of themes' %}</h6>
+    </div>
+    <div class="card-body">
+
+      <div class="row row-cols-1 row-cols-md-3">
+        {% for theme in themes %}
+        <div class="col mb-4">
+          <div class="card">
+            <a href="{% url 'theme' theme.folder_name %}">
+              <img src="{{ theme.cover }}" class="card-img-top" alt="{{ theme.name }}">
+            </a>
+            <div class="card-body">
+              {{ theme.name }}
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+
+    </div>
+  </div>
+
+{% endblock content %}

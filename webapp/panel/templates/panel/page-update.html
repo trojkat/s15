@@ -1,0 +1,80 @@
+{% extends 'panel/dashboard.html' %}
+{% load static i18n %}
+
+{% block title %}{% trans 'Pages' %}{% endblock title %}
+
+{% block content %}
+
+  <div class="container mt-2">
+
+    <form method="post" action="">
+      {% csrf_token %}
+      {{ form.non_field_errors }}
+      <div class="form-group">
+        <input
+          type="text"
+          name="{{ form.title.html_name }}"
+          class="form-control form-control-user form-control-lg"
+          value="{{ form.title.value|default:'' }}">
+        {{ form.title.errors }}
+      </div>
+
+      <div class="row">
+        <div class="col col-md-9">
+          <div class="form-group">
+            <div class="input-group input-group-sm">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroupPrepend">{{ request.scheme }}://{{ request.get_host }}/</span>
+              </div>
+              <input
+                type="text"
+                name="{{ form.slug.html_name }}"
+                class="form-control form-control-user"
+                value="{{ form.slug.value|default:'' }}">
+            </div>
+            {{ form.slug.errors }}
+          </div>
+        </div>
+        <div class="col col-md-3">
+          <select name="{{ form.public.html_name }}" class="form-control form-control-sm">
+            <option value="on"{% if form.instance.public %} selected{% endif %}>{% trans 'Public' %}</option>
+            <option value=""{% if not form.instance.public %} selected{% endif %}>{% trans 'Draft' %}</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <textarea
+          name="{{ form.body.html_name }}"
+          rows="20"
+          class="form-control form-control-user">{{ form.body.value|default:'' }}</textarea>
+          {{ form.body.errors }}
+      </div>
+
+      <p>
+        <input type="submit" value="{% trans 'Save' %}" class="btn btn-primary btn-user btn-block">
+      </p>
+    </form>
+
+  </div>
+
+{% endblock content %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/easymde.min.css' %}">
+{% endblock style %}
+
+{% block js %}
+<script src="{% static 'js/easymde.min.js' %}"></script>
+<script>
+  var simplemde = new EasyMDE({
+    element: $("#editor")[0],
+    showIcons: ['strikethrough', 'table', 'horizontal-rule'],
+    autofocus: true,
+    uploadImage: true,
+    imageUploadEndpoint: "{% url 'image-upload' %}",
+    imageCSRFToken: $('{% csrf_token %}').val(),
+    spellChecker: false
+  });
+  </script>
+{% endblock js %}

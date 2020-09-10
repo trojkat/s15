@@ -1,0 +1,46 @@
+{% extends 'panel/dashboard.html' %}
+{% load i18n %}
+
+{% block title %}{% trans 'Pages' %}{% endblock title %}
+
+{% block content %}
+
+  <div class="card shadow">
+    <div class="card-header py-3">
+      <h6 class="m-0 font-weight-bold text-primary">{% trans 'List of pages' %}</h6>
+    </div>
+    <div class="card-body">
+
+      <form action="" method="POST">
+        {% csrf_token %}
+        <table class="table table-bordered dataTable">
+          <thead>
+            <tr>
+              <th>{% trans 'Title' %}</th>
+              <th style="width:150px;">{% trans 'Link' %}</th>
+              <th style="width:150px;">{% trans 'Start page' %}</th>
+              <th style="width:150px;">{% trans 'Delete' %}</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for page in pages %}
+            <tr>
+              <td>
+                <a href="{% url 'page-update' page.id %}">{{ page.title }}</a>
+                {% if not page.public %}<i class="fas fa-eye-slash"></i>{% endif %}
+              </th>
+              <td><a href="{% url 'page' page.slug %}">{% trans 'Link' %}</a></td>
+              <td><input type="radio" name="start_page" value="{{ page.id }}"{% if page.start_page %} checked{% endif %}></td>
+              <td><a href="{% url 'page-delete' page.id %}">{% trans 'Delete' %}</a></td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+
+         <a href="{% url 'page-create' %}" class="btn btn-primary btn-user">{% trans 'New site' %}</a> <input type="submit" value="{% trans 'Save' %}" class="btn btn-primary btn-user">
+      </form>
+
+    </div>
+  </div>
+
+{% endblock content %}

@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <title>{{ page.title }}</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="{% static 'themes/poole/css/poole.css' %}">
+  <link rel="stylesheet" href="{% static 'themes/hyde/css/hyde.css' %}">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  </head>
+
+
+  <body class="theme-base-{{ settings.color }}{% if settings.sidebar == 'right' %} layout-reverse{% endif %}">
+
+    <div class="sidebar">
+      <div class="container sidebar-sticky">
+        <div class="sidebar-about">
+          <h1>
+            <a href="/">{{ settings.site_name }}</a>
+          </h1>
+          <p class="lead">{{ settings.slogan }}</p>
+        </div>
+
+        <nav class="sidebar-nav">
+          {% for item in pages %}
+          <a class="sidebar-nav-item" href="/{% if not item.start_page %}{{ item.slug }}{% endif %}">{{ item.title }}</a>
+          {% endfor %}
+        </nav>
+      </div>
+    </div>
+
+    <div class="content container">
+      <div class="posts">
+
+        <div class="post">
+          <h1 class="post-title">
+            {{ page.title }}
+          </h1>
+          {{ page.markup }}
+
+          {% if request.user.is_authenticated %}
+            <div>
+              <a href="{% url 'page-update' page.id %}">Edycja</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="{% url 'pages' %}">Lista stron</a>
+            </div>
+          {% endif %}
+
+        </div>
+      </div>
+    </div>
+
+  </body>
+</html>

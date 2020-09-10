@@ -1,0 +1,36 @@
+{% extends 'panel/dashboard.html' %}
+
+{% block title %}Strony{% endblock title %}
+
+{% block content %}
+
+<div class="card shadow">
+    <div class="card-header py-3">
+      <h6 class="m-0 font-weight-bold text-primary">Usunięcie strony</h6>
+    </div>
+    <div class="card-body">
+
+      <form action="" method="POST">
+        {% csrf_token %}
+
+
+        {% if object.start_page %}
+        <div class="alert alert-secondary" role="alert">
+            Nie możesz usunąć strony oznaczonej jako <strong>strona startowa</strong>.
+            Najpierw oznacz inną stronę jako startową.
+        </div>
+        <a href="{% url 'pages' %}" class="btn btn-secondary">Powrót</a>
+        {% else %}
+        <div class="alert alert-warning" role="alert">
+            Czy na pewno chcesz usunąć stronę <strong>{{ object.title }}</strong>?
+        </div>
+
+        <input type="submit" value="Tak, usuń" class="btn btn-danger">
+        <a href="{% url 'pages' %}" class="btn btn-secondary">Powrót</a>
+        {% endif %}
+      </form>
+
+    </div>
+  </div>
+
+{% endblock content %}

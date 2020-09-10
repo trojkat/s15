@@ -1,0 +1,23 @@
+{
+    "name": "Poole",
+    "author": "Mark Otto",
+    "author_website": "https://twitter.com/mdo",
+    "settings": [
+        {
+            "id": "site_name",
+            "name": "Site name",
+            "name_pl": "Nazwa strony",
+            "type": "text",
+            "default": "Your site name",
+            "default_pl": "Nazwa Twojej strony"
+        },
+        {
+            "id": "slogan",
+            "name": "Slogan",
+            "name_pl": "Slogan",
+            "type": "text",
+            "default": "Your slogan",
+            "default_pl": "Twój slogan"
+        }
+    ]
+}

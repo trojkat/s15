@@ -1,0 +1,68 @@
+{
+    "name": "Hyde",
+    "author": "Mark Otto",
+    "author_website": "https://twitter.com/mdo",
+    "settings": [
+        {
+            "id": "site_name",
+            "name": "Site name",
+            "name_pl": "Nazwa strony",
+            "type": "text",
+            "default": "Your site name",
+            "default_pl": "Nazwa Twojej strony"
+        },
+        {
+            "id": "slogan",
+            "name": "Slogan",
+            "name_pl": "Slogan",
+            "type": "text",
+            "default": "Your slogan",
+            "default_pl": "Twój slogan"
+        },
+        {
+            "id": "sidebar",
+            "name": "Sidebar position",
+            "name_pl": "Pozycja paska bocznego",
+            "type": "choice",
+            "choices": {
+                "left": "Left",
+                "right": "Right"
+            },
+            "choices_pl": {
+                "left": "Lewo",
+                "right": "Prawo"
+            },
+            "default": "left"
+        },
+        {
+            "id": "color",
+            "name": "Primary color",
+            "name_pl": "Kolor podstawowy",
+            "type": "choice",
+            "choices": {
+                "00": "Black",
+                "08": "Red",
+                "09": "Orange",
+                "0a": "Yellow",
+                "0b": "Green",
+                "0c": "Cyan",
+                "0d": "Blue",
+                "0e": "Magenta",
+                "0f": "Brown"
+            },
+            "choices_pl": {
+                "00": "Czarny",
+                "08": "Czerwony",
+                "09": "Pomarańczowy",
+                "0a": "Żółty",
+                "0b": "Zielony",
+                "0c": "Cyjan",
+                "0d": "Niemieski",
+                "0e": "Fuksja",
+                "0f": "Brązowy"
+            },
+            "default": "00"
+        }
+    ]
+}
+

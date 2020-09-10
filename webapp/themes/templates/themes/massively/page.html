@@ -1,0 +1,82 @@
+{% load static %}
+<!DOCTYPE HTML>
+<html>
+	<head>
+        <meta charset="utf-8" />
+		<title>{{ page.title }}</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{% static 'themes/massively/css/main.css' %}" />
+		<noscript><link rel="stylesheet" href="{% static 'themes/massively/css/noscript.css' %}" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="/" class="logo">{{ settings.site_name }}</a>
+					</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+                            {% for item in pages %}
+                            <li{% if page.slug == item.slug %} class="active"{% endif %}><a href="/{% if not item.start_page %}{{ item.slug }}{% endif %}">{{ item.title }}</a></li>
+                            {% endfor %}
+                        </ul>
+
+                        {% if settings.twitter or settings.facebook or settings.instagram %}
+						<ul class="icons">
+                            {% if settings.twitter %}
+                            <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+                            {% endif %}
+                            {% if settings.facebook %}
+                            <li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+                            {% endif %}
+                            {% if settings.instagram %}
+                            <li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+                            {% endif %}
+						</ul>
+                        {% endif %}
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<section class="post">
+								<header class="major">
+									<h1>{{ page.title }}</h1>
+								</header>
+								{{ page.markup }}
+							</section>
+
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<section class="split contact">
+							<section class="alt">
+							</section>
+						</section>
+					</footer>
+
+				<!-- Copyright -->
+					<div id="copyright">
+						<ul><li>&copy; {{ settings.site_name }}</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="{% static 'themes/massively/js/jquery.min.js' %}"></script>
+			<script src="{% static 'themes/massively/js/jquery.scrollex.min.js' %}"></script>
+			<script src="{% static 'themes/massively/js/jquery.scrolly.min.js' %}"></script>
+			<script src="{% static 'themes/massively/js/browser.min.js' %}"></script>
+			<script src="{% static 'themes/massively/js/breakpoints.min.js' %}"></script>
+			<script src="{% static 'themes/massively/js/util.js' %}"></script>
+			<script src="{% static 'themes/massively/js/main.js' %}"></script>
+
+	</body>
+</html>
