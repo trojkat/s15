@@ -62,7 +62,7 @@ SUPPORTED_DOMAINS = (
     'localhost:8000',
     'localhost',
     's15.pl',
-    's15.dev',
+    's15.test',
 )
 
 TEMPLATES = [

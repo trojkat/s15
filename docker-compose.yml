@@ -6,7 +6,7 @@ volumes:
 services:
 
   webapp:
-    container_name: webapp
+    container_name: s15-webapp
     build:
       context: ./webapp
       dockerfile: Dockerfile
