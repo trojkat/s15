@@ -128,13 +128,21 @@ class ThemeSettingsEditor(LoginRequiredMixin, FormView):
         return kwargs
 
     def post(self, request):
-        settings = {}
+        theme_settings = {}
         for field in request.POST:
             if field == 'csrfmiddlewaretoken':
                 continue
-            settings[field] = request.POST[field]
+            theme_settings[field] = request.POST[field]
+        for file_field in request.FILES:
+            file = request.FILES[file_field]
+            fs = FileSystemStorage(
+                location=f'{request.site.upload_folder}/themes/{request.site.theme}',
+                base_url=f'{settings.MEDIA_URL}{request.site.subdomain}',
+            )
+            filename = fs.save(file.name, file)
+            theme_settings[file_field] = filename
         site_settings, _ = self.request.site.theme_settings.get_or_create(theme=self.request.site.theme)
-        site_settings.values = json.dumps(settings)
+        site_settings.values = json.dumps(theme_settings)
         site_settings.save()
         messages.success(self.request, 'Ustawienia zostały zapisane.')
         return HttpResponseRedirect(reverse('theme-settings'))

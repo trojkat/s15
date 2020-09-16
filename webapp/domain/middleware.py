@@ -9,6 +9,8 @@ class DomainMiddleware:
 
     def __call__(self, request):
         host = request.get_host()
+        if settings.DEBUG:
+            host = host.split(':')[0]
         supported_domains = settings.SUPPORTED_DOMAINS
         site = None
         for domain in supported_domains:
@@ -17,7 +19,7 @@ class DomainMiddleware:
                 try:
                     site = Site.objects.get(subdomain=subdomain)
                 except:
-                    site = None
+                    pass
                 break
         request.site = site
         return self.get_response(request)

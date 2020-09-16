@@ -4,6 +4,13 @@
     "author_website": "https://twitter.com/ajlkn",
     "settings": [
         {
+            "id": "background_img",
+            "name": "Background image",
+            "name_pl": "Grafika tła",
+            "type": "image",
+            "default": ""
+        },
+        {
             "id": "site_name",
             "name": "Site name",
             "name_pl": "Nazwa strony",

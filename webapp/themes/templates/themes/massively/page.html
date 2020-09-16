@@ -7,6 +7,15 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="{% static 'themes/massively/css/main.css' %}" />
 		<noscript><link rel="stylesheet" href="{% static 'themes/massively/css/noscript.css' %}" /></noscript>
+		{% if settings.background_img %}
+		<style>
+		#wrapper > .bg {
+			background-image: url("{% static 'themes/massively/img/overlay.png' %}"),
+				linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
+				url("{{ THEME_UPLOAD }}/{{ settings.background_img }}");
+		)}
+		</style>
+		{% endif %}
 	</head>
 	<body class="is-preload">
 

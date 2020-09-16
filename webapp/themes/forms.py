@@ -18,6 +18,14 @@ class ThemeSettingsForm(forms.Form):
                     initial=setting.default,
                     help_text=setting.help_text,
                 )
+            if setting.type == "image":
+                field = forms.ImageField(
+                    label=setting.name,
+                    required=False,
+                    # widget=forms.TextInput(attrs={'class': 'form-control'}),
+                    # initial=setting.default,
+                    help_text=setting.help_text,
+                )
             elif setting.type == "choice":
                 field = forms.ChoiceField(
                     label=setting.name,
