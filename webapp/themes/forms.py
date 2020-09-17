@@ -22,8 +22,6 @@ class ThemeSettingsForm(forms.Form):
                 field = forms.ImageField(
                     label=setting.name,
                     required=False,
-                    # widget=forms.TextInput(attrs={'class': 'form-control'}),
-                    # initial=setting.default,
                     help_text=setting.help_text,
                 )
             elif setting.type == "choice":

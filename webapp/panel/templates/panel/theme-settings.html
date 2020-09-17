@@ -1,7 +1,8 @@
 {% extends 'panel/dashboard.html' %}
 {% load static %}
+{% load i18n %}
 
-{% block title %}Ustawienia szablonu {{ theme.name }}{% endblock title %}
+{% block title %}{% trans 'Theme settings' %} - {{ theme.name }}{% endblock title %}
 
 {% block content %}
 
@@ -14,15 +15,30 @@
       <form action="" method="post" enctype="multipart/form-data">
         {% csrf_token %}
         {% for field in form %}
+        {% if field.widget_type == "clearablefile" %}
         <div class="form-group">
-            {{ field.errors }}
-            {{ field.label_tag }} {{ field }}
-            {% if field.help_text %}
-            <p class="help">{{ field.help_text|safe }}</p>
-            {% endif %}
+          {{ field.label_tag }}<br>
+          {% if field.initial %}
+          <input type="checkbox" name="{{ field.name }}{{ remove_checkbox_postfix }}"> {% trans 'Remove' %}<br>
+          <img src="{{ THEME_UPLOAD }}/{{ field.initial }}" alt="{% trans 'Image preview' %}" style="max-width:400px"><br>
+          {% endif %}
+          {{ field }}
+          {{ field.errors }}
+          {% if field.help_text %}
+          <p class="help">{{ field.help_text|safe }}</p>
+          {% endif %}
         </div>
+        {% else %}
+          <div class="form-group">
+            {{ field.label_tag }} {{ field }}
+              {{ field.errors }}
+              {% if field.help_text %}
+              <p class="help">{{ field.help_text|safe }}</p>
+              {% endif %}
+            </div>
+        {% endif %}
         {% endfor %}
-        <input type="submit" class="btn btn-primary btn-user" value="Zapisz">
+        <input type="submit" class="btn btn-primary btn-user" value="{% trans 'Save' %}">
       </form>
 
     </div>

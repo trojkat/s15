@@ -44,6 +44,13 @@ class Theme:
     def mobile(self) -> str:
         return f'{settings.STATIC_URL}themes/{self.folder_name}/img/mobile.png'
 
+    @property
+    def image_fields(self) -> List[str]:
+        '''
+        Returns a list of image field IDs.
+        '''
+        return [field.id for field in self.settings if field.type == 'image']
+
     @classmethod
     def from_dict(cls, data: dict):
         return from_dict(cls, data)

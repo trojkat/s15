@@ -20,7 +20,7 @@ class Site(models.Model):
     def __str__(self):
         return self.subdomain
 
-    def get_absolute_url(self):
+    def get_absolute_url(self) -> str:
         return f'http://{self.subdomain}.localhost:8000'
 
     @property
@@ -33,5 +33,9 @@ class Site(models.Model):
             return {setting.id: setting.default for setting in theme.settings}
 
     @property
-    def upload_folder(self):
+    def upload_folder(self) -> str:
         return os.path.join(settings.MEDIA_ROOT, self.subdomain)
+
+    def remove_theme_image(self, field_name: str) -> None:
+        image_name = self.settings[field_name]
+        os.remove(os.path.join(self.upload_folder, 'themes', self.theme, image_name))

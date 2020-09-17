@@ -115,10 +115,12 @@ class ThemeDetails(LoginRequiredMixin, ProcessFormView, TemplateView):
 class ThemeSettingsEditor(LoginRequiredMixin, FormView):
     template_name = 'panel/theme-settings.html'
     form_class = ThemeSettingsForm
+    REMOVE_CHECKBOX_POSTFIX = '_remove_image'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['theme'] = get_theme(self.request.site.theme, self.request.site.language)
+        context['remove_checkbox_postfix'] = self.REMOVE_CHECKBOX_POSTFIX
         return context
 
     def get_form_kwargs(self):
@@ -128,11 +130,24 @@ class ThemeSettingsEditor(LoginRequiredMixin, FormView):
         return kwargs
 
     def post(self, request):
-        theme_settings = {}
+        theme = get_theme(self.request.site.theme, self.request.site.language)
+        updated_settings = {}
         for field in request.POST:
             if field == 'csrfmiddlewaretoken':
                 continue
-            theme_settings[field] = request.POST[field]
+            if field.endswith(self.REMOVE_CHECKBOX_POSTFIX):
+                continue
+            if field in theme.image_fields and not request.POST[field]:
+                remove_checkbox_name = f'{field}{self.REMOVE_CHECKBOX_POSTFIX}'
+                if remove_checkbox_name in request.POST:
+                    # Image removal request
+                    updated_settings[field] = ''
+                    request.site.remove_theme_image(field)
+                    continue
+                # Image field is empty - keeping the current value
+                updated_settings[field] = request.site.settings.get(field)
+            else:
+                updated_settings[field] = request.POST[field]
         for file_field in request.FILES:
             file = request.FILES[file_field]
             fs = FileSystemStorage(
@@ -140,9 +155,9 @@ class ThemeSettingsEditor(LoginRequiredMixin, FormView):
                 base_url=f'{settings.MEDIA_URL}{request.site.subdomain}',
             )
             filename = fs.save(file.name, file)
-            theme_settings[file_field] = filename
+            updated_settings[file_field] = filename
         site_settings, _ = self.request.site.theme_settings.get_or_create(theme=self.request.site.theme)
-        site_settings.values = json.dumps(theme_settings)
+        site_settings.values = json.dumps(updated_settings)
         site_settings.save()
         messages.success(self.request, 'Ustawienia zostały zapisane.')
         return HttpResponseRedirect(reverse('theme-settings'))

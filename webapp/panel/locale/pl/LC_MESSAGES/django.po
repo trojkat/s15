@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-30 22:11+0000\n"
+"POT-Creation-Date: 2020-09-17 15:12+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,6 +29,7 @@ msgid "Edit"
 msgstr "Edycja"
 
 #: panel/templates/panel/dashboard.html:57
+#: panel/templates/panel/page-update.html:4 panel/templates/panel/pages.html:4
 msgid "Pages"
 msgstr "Strony"
 
@@ -63,3 +64,74 @@ msgstr "Anuluj"
 #: panel/templates/panel/dashboard.html:150
 msgid "Logout"
 msgstr "Wyloguj"
+
+#: panel/templates/panel/page-update.html:40
+msgid "Public"
+msgstr "Opublikowane"
+
+#: panel/templates/panel/page-update.html:41
+msgid "Draft"
+msgstr "Szkic"
+
+#: panel/templates/panel/page-update.html:55
+#: panel/templates/panel/pages.html:40
+msgid "Save"
+msgstr "Zapis"
+
+#: panel/templates/panel/pages.html:10
+msgid "List of pages"
+msgstr "Lista stron"
+
+#: panel/templates/panel/pages.html:19
+msgid "Title"
+msgstr "Tytuł"
+
+#: panel/templates/panel/pages.html:20 panel/templates/panel/pages.html:32
+msgid "Link"
+msgstr "Link"
+
+#: panel/templates/panel/pages.html:21
+msgid "Start page"
+msgstr "Strona startowa"
+
+#: panel/templates/panel/pages.html:22 panel/templates/panel/pages.html:34
+msgid "Delete"
+msgstr "Usuń"
+
+#: panel/templates/panel/pages.html:40
+msgid "New site"
+msgstr "Nowa strona"
+
+#: panel/templates/panel/theme.html:4
+#, fuzzy
+#| msgid "Themes"
+msgid "Theme"
+msgstr "Skórki"
+
+#: panel/templates/panel/theme.html:14
+msgid "Author"
+msgstr "Autor"
+
+#: panel/templates/panel/theme.html:24
+msgid "Web browser"
+msgstr "Przeglądarka"
+
+#: panel/templates/panel/theme.html:30
+msgid "Tablet"
+msgstr "Tablet"
+
+#: panel/templates/panel/theme.html:36
+msgid "Mobile"
+msgstr "Telefon"
+
+#: panel/templates/panel/theme.html:45
+msgid "Use this theme"
+msgstr "Użyj tej skórki"
+
+#: panel/templates/panel/theme.html:46
+msgid "Back"
+msgstr "Powrót"
+
+#: panel/templates/panel/themes.html:4 panel/templates/panel/themes.html:10
+msgid "List of themes"
+msgstr "Lista skórek"
