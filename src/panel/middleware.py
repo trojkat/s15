@@ -5,6 +5,9 @@ class ActiveMenu:
         self.get_response = get_response
 
     def __call__(self, request):
+        if '/panel/' not in request.path:
+            return self.get_response(request)
+
         activate(request.site.language)
         menu_active = None
         if request.path.startswith('/panel/'):
