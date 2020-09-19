@@ -16,3 +16,4 @@ COPY --from=builder /install /usr/local
 WORKDIR /code
 COPY src .
 RUN python manage.py collectstatic -c --noinput
+CMD ["daphne", "-b", "0.0.0.0", "s15.asgi:application"]
