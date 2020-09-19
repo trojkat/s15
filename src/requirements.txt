@@ -2,3 +2,4 @@ Django==3.0.5
 Markdown==3.2.1
 dacite==1.4.0
 daphne==2.5.0
+django-environ==0.4.5

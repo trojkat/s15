@@ -24,15 +24,6 @@ from page import views as page_views
 urlpatterns = [
     path('', page_views.view_page, name='start', kwargs={'slug': None}),
     path('panel/', include('panel.urls')),
-    path('4dm1n/', admin.site.urls),
+    path(f'{settings.ADMIN_PANEL_PATH_NAME}/', admin.site.urls),
     path('<slug:slug>', page_views.view_page, name='page'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-
-if settings.DEBUG:
-    try:
-        import debug_toolbar
-        urlpatterns = [
-            path('__debug__/', include(debug_toolbar.urls)),
-        ] + urlpatterns
-    except:
-        pass

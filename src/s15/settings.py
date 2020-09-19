@@ -11,6 +11,10 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
+import environ
+
+env = environ.Env()
+environ.Env.read_env()
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -20,10 +24,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '^5jrow#r=01db=an-x@8pj9c*p7$$uf3#@k&+t3b3h0775bg)8'
+SECRET_KEY = env('SECRET_KEY', default='i!*V(e8&<Ws1;n/[2_FOmV[fD1`IdU')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = env('DEBUG', default=False)
 
 ALLOWED_HOSTS = ['*']
 
@@ -37,7 +41,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # 'debug_toolbar',
     'panel',
     'domain',
     'page',
@@ -54,16 +57,10 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'domain.middleware.DomainMiddleware',
     'panel.middleware.ActiveMenu',
-    # 'debug_toolbar.middleware.DebugToolbarMiddleware',
 ]
 
 ROOT_URLCONF = 's15.urls'
-SUPPORTED_DOMAINS = (
-    'localhost:8000',
-    'localhost',
-    's15.pl',
-    's15.test',
-)
+SUPPORTED_DOMAINS = env('SUPPORTED_DOMAINS', default=('localhost','s15.test'))
 
 TEMPLATES = [
     {
@@ -153,3 +150,7 @@ MEDIA_URL = '/u/'
 INTERNAL_IPS = [
     '127.0.0.1',
 ]
+
+
+# s15 settings
+ADMIN_PANEL_PATH_NAME = env('ADMIN_PANEL_PATH_NAME', default='4dm1n')
