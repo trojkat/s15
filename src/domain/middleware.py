@@ -1,4 +1,5 @@
 from django.conf import settings
+from django.http import Http404
 
 from .models import Site
 
@@ -21,5 +22,7 @@ class DomainMiddleware:
                 except:
                     pass
                 break
+        if site is None:
+            raise Http404(f'URL {host} is not supported')
         request.site = site
         return self.get_response(request)
