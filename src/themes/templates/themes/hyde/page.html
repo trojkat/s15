@@ -39,13 +39,6 @@
             {{ page.title }}
           </h1>
           {{ page.markup }}
-
-          {% if request.user.is_authenticated %}
-            <div>
-              <a href="{% url 'page-update' page.id %}">Edycja</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="{% url 'pages' %}">Lista stron</a>
-            </div>
-          {% endif %}
-
         </div>
       </div>
     </div>
