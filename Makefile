@@ -1,4 +1,4 @@
-run:
+dev:
 	src/manage.py runserver
 	open http://127.0.0.1:8000
 
@@ -10,3 +10,6 @@ shell:
 
 build:
 	docker build . -t s15
+
+docker-shell:
+	docker run -it s15 /bin/bash
