@@ -8,6 +8,7 @@ urlpatterns = [
     path('', views.PageList.as_view(), name='index'),
     path('pages', views.PageList.as_view(), name='pages'),
     path('pages/create', views.PageCreate.as_view(), name='page-create'),
+    path('pages/change-order', views.PageOrderChange.as_view(), name='pages-change-order'),
     path('pages/<int:pk>', views.PageUpdate.as_view(), name='page-update'),
     path('pages/<int:pk>/delete', views.PageDeleteView.as_view(), name='page-delete'),
     path('themes', views.ThemeList.as_view(), name='themes'),

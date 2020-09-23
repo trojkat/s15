@@ -13,9 +13,11 @@ class Page(models.Model):
     body = models.TextField()
     public = models.BooleanField(default=True)
     start_page = models.BooleanField(default=False)
+    order = models.SmallIntegerField(default=0)
 
     class Meta:
         unique_together = [['site', 'slug']]
+        ordering = ('order', )
 
     def __str__(self):
         return self.title

@@ -4,7 +4,7 @@ from django.core.files.storage import FileSystemStorage
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.messages.views import SuccessMessageMixin
-from django.http import HttpResponseRedirect, JsonResponse
+from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
 from django.contrib import messages
 from django.conf import settings
 from django.shortcuts import render, redirect
@@ -29,15 +29,33 @@ class PageList(LoginRequiredMixin, ListView, ProcessFormView):
     template_name = 'panel/pages.html'
 
     def get_queryset(self):
-        return Page.objects.filter(
-            site=self.request.site
-        ).values('id', 'title', 'slug', 'public', 'start_page', 'insert_date', 'update_date')
+        return Page.objects.filter(site=self.request.site).values(
+            'id',
+            'title',
+            'slug',
+            'public',
+            'start_page',
+            'insert_date',
+            'update_date',
+        )
 
     def post(self, request):
         request.site.pages.update(start_page=False)
         request.site.pages.filter(id=request.POST['start_page']).update(start_page=True)
         messages.success(self.request, 'Nowa strona główna została ustawiona.')
         return HttpResponseRedirect(reverse('pages'))
+
+
+class PageOrderChange(LoginRequiredMixin, ProcessFormView):
+
+    def post(self, request):
+        new_order = map(int, request.POST['new_order'].split(','))
+        my_pages = request.site.pages.values_list('id', flat=True)
+        for index, page_id in enumerate(new_order):
+            if page_id not in my_pages:
+                continue
+            request.site.pages.filter(id=page_id).update(order=index)
+        return HttpResponse(status=204)
 
 
 class PageCreate(LoginRequiredMixin, SuccessMessageMixin, CreateView):
