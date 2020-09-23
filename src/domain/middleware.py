@@ -22,7 +22,7 @@ class DomainMiddleware:
                 except:
                     pass
                 break
-        if site is None:
-            raise Http404(f'URL {host} is not supported')
+        if site is None and not request.path.startswith(f'/{settings.ADMIN_PANEL_PATH_NAME}/'):
+            raise Http404()
         request.site = site
         return self.get_response(request)
