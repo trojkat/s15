@@ -70,10 +70,15 @@
   var simplemde = new EasyMDE({
     element: $("#editor")[0],
     showIcons: ['strikethrough', 'table', 'horizontal-rule'],
+    hideIcons: ['guide', 'image'],
     autofocus: true,
     uploadImage: true,
     imageUploadEndpoint: "{% url 'image-upload' %}",
     imageCSRFToken: $('{% csrf_token %}').val(),
+    imageTexts: {
+      sbInit: "{% trans 'Attach files by drag and dropping or pasting from clipboard' %}"
+    },
+    status: ["upload-image"],
     spellChecker: false
   });
   </script>

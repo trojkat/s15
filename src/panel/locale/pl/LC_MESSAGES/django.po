@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-17 15:12+0000\n"
+"POT-Creation-Date: 2020-09-26 16:26+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,118 +20,138 @@ msgstr ""
 "%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n"
 "%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
 
-#: panel/templates/panel/dashboard.html:13
+#: src/panel/templates/panel/dashboard.html:13
 msgid "Admin panel"
 msgstr "Panel administratora"
 
-#: panel/templates/panel/dashboard.html:51
+#: src/panel/templates/panel/dashboard.html:51
 msgid "Edit"
 msgstr "Edycja"
 
-#: panel/templates/panel/dashboard.html:57
-#: panel/templates/panel/page-update.html:4 panel/templates/panel/pages.html:4
+#: src/panel/templates/panel/dashboard.html:57
+#: src/panel/templates/panel/page-update.html:4
+#: src/panel/templates/panel/pages.html:4
 msgid "Pages"
 msgstr "Strony"
 
-#: panel/templates/panel/dashboard.html:63
-msgid "Files"
-msgstr "Pliki"
-
-#: panel/templates/panel/dashboard.html:71
+#: src/panel/templates/panel/dashboard.html:66
 msgid "Administration"
 msgstr "Administracja"
 
-#: panel/templates/panel/dashboard.html:77
+#: src/panel/templates/panel/dashboard.html:72
 msgid "Themes"
 msgstr "Skórki"
 
-#: panel/templates/panel/dashboard.html:83
+#: src/panel/templates/panel/dashboard.html:78
 msgid "Settings"
 msgstr "Ustawienia"
 
-#: panel/templates/panel/dashboard.html:142
-msgid "Are you sure?"
-msgstr "Czy na pewno?"
-
-#: panel/templates/panel/dashboard.html:147
-msgid "Choose \"Logout\" below to close this session"
-msgstr "Wybierz \"Wyloguj\" poniżej aby zakończyć sesję"
-
-#: panel/templates/panel/dashboard.html:149
-msgid "Cancel"
-msgstr "Anuluj"
-
-#: panel/templates/panel/dashboard.html:150
+#: src/panel/templates/panel/dashboard.html:87
+#: src/panel/templates/panel/dashboard.html:151
 msgid "Logout"
 msgstr "Wyloguj"
 
-#: panel/templates/panel/page-update.html:40
+#: src/panel/templates/panel/dashboard.html:143
+msgid "Are you sure?"
+msgstr "Czy na pewno?"
+
+#: src/panel/templates/panel/dashboard.html:148
+msgid "Choose \"Logout\" below to close this session"
+msgstr "Wybierz \"Wyloguj\" poniżej aby zakończyć sesję"
+
+#: src/panel/templates/panel/dashboard.html:150
+msgid "Cancel"
+msgstr "Anuluj"
+
+#: src/panel/templates/panel/page-update.html:40
 msgid "Public"
 msgstr "Opublikowane"
 
-#: panel/templates/panel/page-update.html:41
+#: src/panel/templates/panel/page-update.html:41
 msgid "Draft"
 msgstr "Szkic"
 
-#: panel/templates/panel/page-update.html:55
-#: panel/templates/panel/pages.html:40
+#: src/panel/templates/panel/page-update.html:55
+#: src/panel/templates/panel/pages.html:42
+#: src/panel/templates/panel/theme-settings.html:41
 msgid "Save"
 msgstr "Zapis"
 
-#: panel/templates/panel/pages.html:10
+#: src/panel/templates/panel/page-update.html:78
+msgid "Attach files by drag and dropping or pasting from clipboard"
+msgstr "Aby wstawić grafikę przeciągnij do edytora plik lub wklej grafikę ze schowka"
+
+#: src/panel/templates/panel/pages.html:10
 msgid "List of pages"
 msgstr "Lista stron"
 
-#: panel/templates/panel/pages.html:19
+#: src/panel/templates/panel/pages.html:20
 msgid "Title"
 msgstr "Tytuł"
 
-#: panel/templates/panel/pages.html:20 panel/templates/panel/pages.html:32
+#: src/panel/templates/panel/pages.html:21
+#: src/panel/templates/panel/pages.html:34
 msgid "Link"
 msgstr "Link"
 
-#: panel/templates/panel/pages.html:21
+#: src/panel/templates/panel/pages.html:22
 msgid "Start page"
 msgstr "Strona startowa"
 
-#: panel/templates/panel/pages.html:22 panel/templates/panel/pages.html:34
+#: src/panel/templates/panel/pages.html:23
+#: src/panel/templates/panel/pages.html:36
 msgid "Delete"
 msgstr "Usuń"
 
-#: panel/templates/panel/pages.html:40
+#: src/panel/templates/panel/pages.html:42
 msgid "New site"
 msgstr "Nowa strona"
 
-#: panel/templates/panel/theme.html:4
+#: src/panel/templates/panel/theme-settings.html:5
+#, fuzzy
+#| msgid "Settings"
+msgid "Theme settings"
+msgstr "Ustawienia"
+
+#: src/panel/templates/panel/theme-settings.html:22
+msgid "Remove"
+msgstr ""
+
+#: src/panel/templates/panel/theme-settings.html:23
+msgid "Image preview"
+msgstr ""
+
+#: src/panel/templates/panel/theme.html:4
 #, fuzzy
 #| msgid "Themes"
 msgid "Theme"
 msgstr "Skórki"
 
-#: panel/templates/panel/theme.html:14
+#: src/panel/templates/panel/theme.html:14
 msgid "Author"
 msgstr "Autor"
 
-#: panel/templates/panel/theme.html:24
+#: src/panel/templates/panel/theme.html:24
 msgid "Web browser"
 msgstr "Przeglądarka"
 
-#: panel/templates/panel/theme.html:30
+#: src/panel/templates/panel/theme.html:30
 msgid "Tablet"
 msgstr "Tablet"
 
-#: panel/templates/panel/theme.html:36
+#: src/panel/templates/panel/theme.html:36
 msgid "Mobile"
 msgstr "Telefon"
 
-#: panel/templates/panel/theme.html:45
+#: src/panel/templates/panel/theme.html:45
 msgid "Use this theme"
 msgstr "Użyj tej skórki"
 
-#: panel/templates/panel/theme.html:46
+#: src/panel/templates/panel/theme.html:46
 msgid "Back"
 msgstr "Powrót"
 
-#: panel/templates/panel/themes.html:4 panel/templates/panel/themes.html:10
+#: src/panel/templates/panel/themes.html:4
+#: src/panel/templates/panel/themes.html:10
 msgid "List of themes"
 msgstr "Lista skórek"
