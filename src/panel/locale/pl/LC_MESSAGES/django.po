@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-26 16:26+0000\n"
+"POT-Creation-Date: 2020-09-26 20:36+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -78,8 +78,85 @@ msgid "Save"
 msgstr "Zapis"
 
 #: src/panel/templates/panel/page-update.html:78
+msgid "Bold"
+msgstr "Pogrubienie"
+
+#: src/panel/templates/panel/page-update.html:85
+msgid "Italic"
+msgstr "Kursywa"
+
+#: src/panel/templates/panel/page-update.html:92
+msgid "Heading"
+msgstr "Nagłówek"
+
+#: src/panel/templates/panel/page-update.html:99
+msgid "Quote"
+msgstr "Cytat"
+
+#: src/panel/templates/panel/page-update.html:106
+msgid "Generic List"
+msgstr "Lista punktowana"
+
+#: src/panel/templates/panel/page-update.html:113
+msgid "Numbered List"
+msgstr "Lista numerowana"
+
+#: src/panel/templates/panel/page-update.html:120
+msgid "Clean block"
+msgstr "Wyczyść tekst"
+
+#: src/panel/templates/panel/page-update.html:127
+msgid "Create Link"
+msgstr "Odnośnik"
+
+#: src/panel/templates/panel/page-update.html:134
+msgid "Insert Table"
+msgstr "Wstaw tabelę"
+
+#: src/panel/templates/panel/page-update.html:140
+msgid "Insert Horizontal Line"
+msgstr "Wstaw poziomą linię"
+
+#: src/panel/templates/panel/page-update.html:148
+msgid "Toggle Preview"
+msgstr "Podgląd"
+
+#: src/panel/templates/panel/page-update.html:157
+msgid "Toggle Side by Side"
+msgstr "Widok podzielony"
+
+#: src/panel/templates/panel/page-update.html:166
+msgid "Toggle Fullscreen"
+msgstr "Pełny ekran"
+
+#: src/panel/templates/panel/page-update.html:172
+msgid "https://www.markdownguide.org/basic-syntax/"
+msgstr "https://blog.nayma.pl/podstawy-markdown/"
+
+#: src/panel/templates/panel/page-update.html:175
+msgid "Markdown Guide"
+msgstr "Pomoc w formatowaniu tekstu"
+
+#: src/panel/templates/panel/page-update.html:184
+msgid "Undo"
+msgstr "Cofnij"
+
+#: src/panel/templates/panel/page-update.html:191
+msgid "Redo"
+msgstr "Ponów"
+
+#: src/panel/templates/panel/page-update.html:198
 msgid "Attach files by drag and dropping or pasting from clipboard"
-msgstr "Aby wstawić grafikę przeciągnij do edytora plik lub wklej grafikę ze schowka"
+msgstr ""
+"Aby wstawić grafikę przeciągnij do edytora plik lub wklej grafikę ze schowka"
+
+#: src/panel/templates/panel/page-update.html:201
+msgid "Column"
+msgstr "Kolumna"
+
+#: src/panel/templates/panel/page-update.html:201
+msgid "Text"
+msgstr "Tekst"
 
 #: src/panel/templates/panel/pages.html:10
 msgid "List of pages"
@@ -115,11 +192,11 @@ msgstr "Ustawienia"
 
 #: src/panel/templates/panel/theme-settings.html:22
 msgid "Remove"
-msgstr ""
+msgstr "Usuń"
 
 #: src/panel/templates/panel/theme-settings.html:23
 msgid "Image preview"
-msgstr ""
+msgstr "Podgląd"
 
 #: src/panel/templates/panel/theme.html:4
 #, fuzzy
