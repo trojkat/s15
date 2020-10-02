@@ -4,4 +4,4 @@ from .models import Site
 
 @admin.register(Site)
 class SiteAdmin(admin.ModelAdmin):
-    pass
+   list_display = ('subdomain', 'domain', 'language', 'landing_page')

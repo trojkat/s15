@@ -16,12 +16,20 @@ class DomainMiddleware:
         site = None
         for domain in supported_domains:
             if host.endswith(domain):
-                subdomain = host.split('.')[0]
-                try:
-                    site = Site.objects.get(subdomain=subdomain)
-                except:
-                    pass
-                break
+                if host == domain:
+                    # getting landing page
+                    try:
+                        site = Site.objects.filter(landing_page=True).first()
+                    except:
+                        pass
+                    break
+                else:
+                    subdomain = host.split('.')[0]
+                    try:
+                        site = Site.objects.get(subdomain=subdomain)
+                    except:
+                        pass
+                    break
         if site is None and not request.path.startswith(f'/{settings.ADMIN_PANEL_PATH_NAME}/'):
             raise Http404()
         request.site = site
