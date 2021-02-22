@@ -181,7 +181,7 @@ msgid "Delete"
 msgstr "Usuń"
 
 #: src/panel/templates/panel/pages.html:42
-msgid "New site"
+msgid "New page"
 msgstr "Nowa strona"
 
 #: src/panel/templates/panel/theme-settings.html:5
