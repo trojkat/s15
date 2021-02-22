@@ -44,9 +44,7 @@ Create environment settings
 
 Example content of `.env` file
 
-```
-DEBUG=True
-``
+    DEBUG=True
 
 Ignoring changes in the database file
 
@@ -60,4 +58,6 @@ Go to admin panel and create your first site
 
     http://localhost:8000/4dm1n/domain/site/add/
 
-Your site will be accessible under http://YOUR-SUBDOMAIN.localhost:8000/ and editor penel will be under http://YOUR-SUBDOMAIN.localhost:8000/panel/
+Your site will be accessible under http://YOUR-SUBDOMAIN.localhost:8000/ and editor panel will be under http://YOUR-SUBDOMAIN.localhost:8000/panel/
+
+
