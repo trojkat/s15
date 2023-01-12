@@ -3783,7 +3783,10 @@ input, select, textarea {
 		}
 
 		#main > .post img {
+			display: block;
 			max-width: 100%;
+			margin: 2rem auto;
+			max-height: 700px;
 		}
 
 			#main > .post header.major > .date {
