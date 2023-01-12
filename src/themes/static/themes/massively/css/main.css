@@ -3786,7 +3786,7 @@ input, select, textarea {
 			display: block;
 			max-width: 100%;
 			margin: 2rem auto;
-			max-height: 700px;
+			max-height: 800px;
 		}
 
 			#main > .post header.major > .date {
