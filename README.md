@@ -26,9 +26,13 @@ Screenshots
 
 ### Installation
 
-Python packages
+Install [Poetry](https://python-poetry.org/):
 
-    pip install -r src/requirements.txt
+    pip install poetry
+
+Install requirements
+
+    poetry install
 
 Initial migrations
 
