@@ -12,7 +12,7 @@ from themes.utils import get_theme, get_themes_names
 class Site(models.Model):
     user = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
     subdomain = models.CharField(max_length=50)
-    domain = models.CharField(null=True, blank=True, max_length=50)
+    domain = models.CharField(max_length=50)
     theme = models.CharField(max_length=50, choices=get_themes_names())
     active = models.BooleanField(default=True)
     language = models.CharField(max_length=2, choices=settings.LANGUAGES)

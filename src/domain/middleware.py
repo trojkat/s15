@@ -19,14 +19,14 @@ class DomainMiddleware:
                 if host == domain:
                     # getting landing page
                     try:
-                        site = Site.objects.filter(landing_page=True).first()
+                        site = Site.objects.filter(domain=domain, landing_page=True).first()
                     except:
                         pass
                     break
                 else:
-                    subdomain = host.split('.')[0]
+                    subdomain, domain = host.split('.', maxsplit=1)
                     try:
-                        site = Site.objects.get(subdomain=subdomain)
+                        site = Site.objects.get(domain=domain, subdomain=subdomain)
                     except:
                         pass
                     break
