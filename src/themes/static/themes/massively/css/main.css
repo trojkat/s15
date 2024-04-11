@@ -2061,11 +2061,11 @@ input, select, textarea {
 
 /* Button */
 
-	input[type="submit"],
-	input[type="reset"],
-	input[type="button"],
-	button,
-	.button {
+	#wrapper input[type="submit"],
+	#wrapper input[type="reset"],
+	#wrapper input[type="button"],
+	#wrapper button,
+	#wrapper .button {
 		-moz-appearance: none;
 		-webkit-appearance: none;
 		-ms-appearance: none;

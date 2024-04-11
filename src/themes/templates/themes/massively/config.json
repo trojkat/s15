@@ -38,6 +38,21 @@
             "name_pl": "Adres profilu na Instagramie",
             "type": "text",
             "default": ""
+        },
+        {
+            "id": "contact_whatsapp",
+            "name": "WhatsApp phone number",
+            "name_pl": "Numer telefonu z WhatsApp",
+            "type": "text",
+            "default": ""
+        },
+        {
+            "id": "contact_messenger",
+            "name": "Messenger ID",
+            "name_pl": "Messenger ID",
+            "type": "text",
+            "default": ""
         }
+
     ]
 }
