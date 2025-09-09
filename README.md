@@ -7,7 +7,7 @@ s15 is a dead simple CMS that your mom can handle.
 Features
 
 - Text based content editor (Markdown)
-- Multi domain support
+- Multi-tenancy
 - Drag & drop image insertion
 - Easy to create and customize template system
 - Build-in responsive templates
@@ -63,5 +63,3 @@ Go to admin panel and create your first site
     http://localhost:8000/4dm1n/domain/site/add/
 
 Your site will be accessible under http://YOUR-SUBDOMAIN.localhost:8000/ and editor panel will be under http://YOUR-SUBDOMAIN.localhost:8000/panel/
-
-

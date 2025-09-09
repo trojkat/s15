@@ -1,4 +1,4 @@
-FROM python:3.11-slim-bookworm as base
+FROM python:3.13-slim-bookworm as base
 
 
 ENV PIP_DISABLE_PIP_VERSION_CHECK=1 \
