@@ -1,58 +1,71 @@
 {
-    "name": "Massively",
-    "author": "AJ",
-    "author_website": "https://twitter.com/ajlkn",
-    "settings": [
-        {
-            "id": "background_img",
-            "name": "Background image",
-            "name_pl": "Grafika tła",
-            "type": "image",
-            "default": ""
-        },
-        {
-            "id": "site_name",
-            "name": "Site name",
-            "name_pl": "Nazwa strony",
-            "type": "text",
-            "default": "Your site name",
-            "default_pl": "Nazwa Twojej strony"
-        },
-        {
-            "id": "twitter",
-            "name": "Twitter profile URL",
-            "name_pl": "Adres profilu na Twitterze",
-            "type": "text",
-            "default": ""
-        },
-        {
-            "id": "facebook",
-            "name": "Facebook profile URL",
-            "name_pl": "Adres profilu na Facebooku",
-            "type": "text",
-            "default": ""
-        },
-        {
-            "id": "instagram",
-            "name": "Instagram profile URL",
-            "name_pl": "Adres profilu na Instagramie",
-            "type": "text",
-            "default": ""
-        },
-        {
-            "id": "contact_whatsapp",
-            "name": "WhatsApp phone number",
-            "name_pl": "Numer telefonu z WhatsApp",
-            "type": "text",
-            "default": ""
-        },
-        {
-            "id": "contact_messenger",
-            "name": "Messenger ID",
-            "name_pl": "Messenger ID",
-            "type": "text",
-            "default": ""
-        }
-
-    ]
+  "name": "Massively",
+  "author": "AJ",
+  "author_website": "https://twitter.com/ajlkn",
+  "settings": [
+    {
+      "id": "background_img",
+      "name": "Background image",
+      "name_pl": "Grafika tła",
+      "type": "image",
+      "default": ""
+    },
+    {
+      "id": "site_name",
+      "name": "Site name",
+      "name_pl": "Nazwa strony",
+      "type": "text",
+      "default": "Your site name",
+      "default_pl": "Nazwa Twojej strony"
+    },
+    {
+      "id": "twitter",
+      "name": "Twitter profile URL",
+      "name_pl": "Adres profilu na Twitterze",
+      "type": "text",
+      "default": ""
+    },
+    {
+      "id": "facebook",
+      "name": "Facebook profile URL",
+      "name_pl": "Adres profilu na Facebooku",
+      "type": "text",
+      "default": ""
+    },
+    {
+      "id": "instagram",
+      "name": "Instagram profile URL",
+      "name_pl": "Adres profilu na Instagramie",
+      "type": "text",
+      "default": ""
+    },
+    {
+      "id": "youtube",
+      "name": "YouTube profile URL",
+      "name_pl": "Adres profilu na YouTube",
+      "type": "text",
+      "default": ""
+    },
+    {
+      "id": "tiktok",
+      "name": "TikTok profile URL",
+      "name_pl": "Adres profilu na TikTok",
+      "type": "text",
+      "default": ""
+    },
+    {
+      "id": "contact_whatsapp",
+      "name": "WhatsApp phone number",
+      "name_pl": "Numer telefonu z WhatsApp",
+      "type": "text",
+      "default": ""
+    },
+    {
+      "id": "contact_messenger",
+      "name": "Messenger ID",
+      "name_pl": "Messenger ID",
+      "type": "text",
+      "default": ""
+    }
+  ]
 }

@@ -38,13 +38,19 @@
                         {% if settings.twitter or settings.facebook or settings.instagram %}
 						<ul class="icons">
                             {% if settings.twitter %}
-                            <li><a href="{{ settings.twitter }}" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+					<li><a href="{{ settings.twitter }}"><i class="fa-brands fa-twitter"><span class="label">Twitter</span></i></a></li>
                             {% endif %}
                             {% if settings.facebook %}
-                            <li><a href="{{ settings.facebook }}" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+					<li><a href="{{ settings.facebook }}"><i class="fa-brands fa-facebook-f"><span class="label">Facebook</span></i></a></li>
                             {% endif %}
                             {% if settings.instagram %}
-                            <li><a href="{{ settings.instagram }}" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+					<li><a href="{{ settings.instagram }}"><i class="fa-brands fa-instagram"><span class="label">Instagram</span></i></a></li>
+                            {% endif %}
+                            {% if settings.youtube %}
+					<li><a href="{{ settings.youtube }}"><i class="fa-brands fa-youtube"><span class="label">YouTube</span></i></a></li>
+                            {% endif %}
+                            {% if settings.tiktok %}
+					<li><a href="{{ settings.tiktok }}"><i class="fa-brands fa-tiktok"><span class="label">TikTok</span></i></a></li>
                             {% endif %}
 						</ul>
                         {% endif %}
