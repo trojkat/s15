@@ -1,9 +1,9 @@
-FROM python:3.13-slim-bookworm as base
+FROM python:3.12-bookworm as base
 
 
 ENV PIP_DISABLE_PIP_VERSION_CHECK=1 \
     PIP_NO_CACHE_DIR=1 \
-    POETRY_VERSION=1.8.5
+    POETRY_VERSION=2.1.2
 
 RUN mkdir /app
 WORKDIR /app
