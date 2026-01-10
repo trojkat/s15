@@ -66,6 +66,13 @@
       "name_pl": "Messenger ID",
       "type": "text",
       "default": ""
+    },
+    {
+      "id": "contact_viber",
+      "name": "Viber ID",
+      "name_pl": "Viber ID",
+      "type": "text",
+      "default": ""
     }
   ]
 }
