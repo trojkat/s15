@@ -6,7 +6,7 @@ authors = ["Tomasz Karbownicki <tomasz@karbownicki.com>"]
 license = "MIT"
 
 [tool.poetry.dependencies]
-python = "<3.12"
+python = "3.11.14"
 Django = "5.0.4"
 Markdown = "3.6"
 dacite = "1.7.0"
